@@ -1,1 +1,97 @@
-<p>signup works!</p>
+<h1>Page d'inscription</h1>
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+      <div class="form-group">
+        <label for="firstname">firstname</label>
+        <input
+          type="text"
+          [(ngModel)]="user.firstname"
+          class="form-control"
+          id="firstname"
+          name="firstname"
+          placeholder="Enter your firstname"
+          required
+          #firstname="ngModel"
+        />
+      </div>
+      <div [hidden]="!firstname.pristine" class="alert alert-danger">
+        firstname is required
+      </div>
+
+      <div class="form-group">
+        <label for="lastname">lastname</label>
+        <input
+          type="text"
+          [(ngModel)]="user.lastname"
+          class="form-control"
+          id="lastname"
+          name="lastname"
+          placeholder="Enter your lastname"
+          required
+          #lastname="ngModel"
+        />
+        <div [hidden]="!lastname.pristine" class="alert alert-danger">
+          lastname is required
+        </div>
+
+        <div class="form-group">
+          <label for="city">city</label>
+          <input
+            type="text"
+            [(ngModel)]="user.city"
+            class="form-control"
+            id="city"
+            name="city"
+            placeholder="Enter your city address"
+            required
+            #city="ngModel"
+          />
+          <div [hidden]="!city.pristine" class="alert alert-danger">
+            city is required
+          </div>
+          <div class="form-group">
+            <label for="email">email</label>
+            <input
+              type="text"
+              [(ngModel)]="user.email"
+              class="form-control"
+              id="email"
+              name="email"
+              placeholder="Enter your email address"
+              required
+              #email="ngModel"
+            />
+            <div [hidden]="!email.pristine" class="alert alert-danger">
+              email is required
+            </div>
+
+            <div class="form-group">
+              <label for="password">password</label>
+              <input
+                type="text"
+                [(ngModel)]="user.password"
+                class="form-control"
+                id="password"
+                name="password"
+                placeholder="Enter your password address"
+                required
+                #password="ngModel"
+              />
+              <div [hidden]="!password.pristine" class="alert alert-danger">
+                password is required
+              </div>
+              <button
+                type="submit"
+                [disabled]="!userForm.form.valid"
+                class="btn btn-info"
+              >
+                Submit
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
