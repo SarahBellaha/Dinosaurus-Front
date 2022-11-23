@@ -13,6 +13,7 @@ import { UserRequestsComponent } from './user-requests/user-requests.component';
 import { UserReservationsComponent } from './user-reservations/user-reservations.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { UsernavComponent } from './usernav/usernav.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { SignupComponent } from './signup/signup.component';
     UserRequestsComponent,
     UserReservationsComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    UsernavComponent
   ],
   imports: [
     BrowserModule,
