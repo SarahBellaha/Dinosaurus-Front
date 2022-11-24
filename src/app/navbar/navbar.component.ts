@@ -6,20 +6,18 @@ import { LoginService } from '../login.service';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
+  @Input() isLoggedIn: string =
+    this.localStorage.getData('loggedIn') || 'false';
+  constructor(private localStorage: LoginService, private router: Router) {}
 
-  @Input() isLoggedIn: string| null = this.localStorage.getData("loggedIn");
-  constructor(private localStorage: LoginService, private router: Router) { }
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   logout() {
     this.localStorage.clear();
-    this.localStorage.saveData("loggedIn", "false");
+    this.localStorage.saveData('loggedIn', 'false');
     window.location.replace('http://localhost:4200/home');
   }
-
 }

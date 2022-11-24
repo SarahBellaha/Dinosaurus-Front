@@ -9,8 +9,6 @@ import { ToysServiceService } from '../Toys-Service/toys-service.service';
   styleUrls: ['./user-toys.component.css'],
 })
 export class UserToysComponent implements OnInit {
-  toys: ToyClass[] = [];
-
   toys: Toy[] = [];
 
   constructor(

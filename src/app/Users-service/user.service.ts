@@ -11,8 +11,6 @@ import { UserClass } from '../classes/user';
 export class UserService {
   constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) {}
-
   private usersUrl = 'http://localhost:8080/users';
 
   getUserDetail(id: number): Observable<User> {
