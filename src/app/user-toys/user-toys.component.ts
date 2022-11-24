@@ -1,15 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+import { ToyClass } from '../classes/toy';
+import { ToysServiceService } from '../Toys-Service/toys-service.service';
 
 @Component({
   selector: 'app-user-toys',
   templateUrl: './user-toys.component.html',
-  styleUrls: ['./user-toys.component.css']
+  styleUrls: ['./user-toys.component.css'],
 })
 export class UserToysComponent implements OnInit {
+  toys: ToyClass[] = [];
 
-  constructor() { }
+  constructor(private toyService: ToysServiceService) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.toyService.findAll().subscribe((data) => {
+      this.toys = data;
+    });
   }
-
 }
