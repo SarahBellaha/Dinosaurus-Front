@@ -17,6 +17,7 @@ import { UserService } from './Users-service/user.service';
 import { HttpClientModule } from '@angular/common/http';
 import { UserAnnoucementComponent } from './user-annoucement/user-annoucement.component';
 import { UserToysComponent } from './user-toys/user-toys.component';
+import { ToysServiceService } from './Toys-Service/toys-service.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { UserToysComponent } from './user-toys/user-toys.component';
     UserToysComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
-  providers: [UserService],
+  providers: [UserService, ToysServiceService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
