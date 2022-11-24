@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Transaction } from '../Interfaces/Transaction';
 import { User } from '../Interfaces/User';
+import { UserClass } from '../classes/user';
 
 @Injectable({
   providedIn: 'root'
@@ -68,5 +69,9 @@ export class UserService {
     }
 
     return this.http.post<Transaction>(`${this.usersUrl}/${takerId}/${toyId}/transactions`, {toyOwnerId: ownerId},httpOptions);
+  }
+
+  public save(user: UserClass) {
+    return this.http.post<UserClass>(this.usersUrl, user);
   }
 }

@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { User } from '../classes/user';
-import { UserServiceService } from '../service/user-service.service';
+import { UserClass } from '../classes/user';
+import { UserService } from '../Users-service/user.service';
 
 @Component({
   selector: 'app-signup',
@@ -9,10 +9,10 @@ import { UserServiceService } from '../service/user-service.service';
   styleUrls: ['./signup.component.css'],
 })
 export class SignupComponent implements OnInit {
-  @Input() user: User;
+  @Input() user: UserClass;
 
-  constructor(private router: Router, private userService: UserServiceService) {
-    this.user = new User();
+  constructor(private router: Router, private userService: UserService) {
+    this.user = new UserClass();
   }
 
   // Add user to DB

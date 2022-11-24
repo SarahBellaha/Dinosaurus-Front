@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { User } from '../classes/user';
+import { UserClass } from '../classes/user';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +9,7 @@ import { User } from '../classes/user';
 })
 export class LoginComponent implements OnInit {
   @Input()
-  user: User = new User();
+  user: UserClass = new UserClass();
 
   constructor(private router: Router) {}
 
