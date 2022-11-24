@@ -14,6 +14,7 @@ import { UserReservationsComponent } from './user-reservations/user-reservations
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { UsernavComponent } from './usernav/usernav.component';
+import { FormsModule } from '@angular/forms';
 import { UserServiceService } from './service/user-service.service';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -30,8 +31,13 @@ import { HttpClientModule } from '@angular/common/http';
     UserReservationsComponent,
     LoginComponent,
     SignupComponent,
-    UsernavComponent,
-    UserInfosComponent,
+    UsernavComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [UserServiceService],
