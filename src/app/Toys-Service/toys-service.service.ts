@@ -37,7 +37,7 @@ export class ToysServiceService {
   }
 
 
-  public saveToy(toy: ToyClass) {
-    return this.http.post<ToyClass>(this.dinoUrl, toy);
+  public saveToy(toy: ToyClass, id: number) {
+    return this.http.post<ToyClass>(`${this.usersUrl}/${id}/toys`, toy);
   }
 }

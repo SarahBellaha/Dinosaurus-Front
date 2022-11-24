@@ -6,7 +6,7 @@
     <button
       type="button"
       [ngClass]="toy.available === true ? 'beige button' : 'green button'"
-      (click)="makeReservation(toy.user.id)"
+      (click)="makeReservation()"
     >
       {{ toy.available === true ? "Réserver ce jouet" : "Jouet réservé" }}
     </button>
