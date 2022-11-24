@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ToyClass } from '../classes/toy';
+import { Toy } from '../Interfaces/Toy';
+import { LoginService } from '../login.service';
+import { ToysServiceService } from '../Toys-Service/toys-service.service';
 
 @Component({
   selector: 'app-user-annoucement',
@@ -6,10 +11,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-annoucement.component.css']
 })
 export class UserAnnoucementComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
+  toy: ToyClass = new ToyClass();
+  constructor(private router: Router, private toyService: ToysServiceService, private localStorage: LoginService) {}
+  // Add user to DB
+  gotoHome() {
+    this.router.navigateByUrl('/home');
   }
-
+  gotoToyList() {
+    this.router.navigateByUrl('/useraccount/toys');
+  }
+  onSubmit() {
+    //this.toyService.saveToy(this.toy).subscribe(() => this.gotoToyList());
+    console.log(this.toy);
+  }
+  ngOnInit(): void {}
 }

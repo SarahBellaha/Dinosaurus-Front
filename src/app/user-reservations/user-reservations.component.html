@@ -1,1 +1,9 @@
 <app-usernav></app-usernav>
+<h2>Vos réservations de jouets :</h2>
+<div class="body-toys">
+  <div class="toy-card" *ngFor="let item of reservations">
+    <img [src]="item.tradedToy.picture" [alt]="item.tradedToy.name" />
+    <p>{{ item.tradedToy.name }}</p>
+    <a [routerLink]="['./', item.id]">{{ item.tradedToy.name }}</a>
+  </div>
+</div>

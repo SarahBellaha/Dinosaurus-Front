@@ -17,8 +17,9 @@ export class SignupComponent implements OnInit {
 
   // Add user to DB
   gotoHome() {
-    this.router.navigateByUrl('/home');
+    this.router.navigateByUrl('/login');
   }
+
   onSubmit() {
     this.userService.save(this.user).subscribe(() => this.gotoHome());
   }

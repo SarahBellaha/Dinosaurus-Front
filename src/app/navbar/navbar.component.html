@@ -1,17 +1,25 @@
 <ul class="nav">
+  <img class="nav-logo" src="https://i.goopics.net/3ho2iw.png" alt="logo" />
   <li>
     <a [routerLink]="['/home']">Home</a>
   </li>
   <li>
     <a [routerLink]="['/toys']">Jouets</a>
   </li>
-  <li>
-    <a [routerLink]="['/useraccount/informations']">Espace Client</a>
-  </li>
-  <li>
-    <a [routerLink]="['/signup']">S'inscrire</a>
-  </li>
-  <li>
-    <a [routerLink]="['/login']">Se connecter</a>
-  </li>
+  <div *ngIf="isLoggedIn === 'true'" class="links">
+    <li>
+      <a [routerLink]="['/useraccount/informations']">Espace Client</a>
+    </li>
+    <li>
+      <a [routerLink]="['/home']" (click)="logout()">Déconnexion</a>
+    </li>
+  </div>
+  <div *ngIf="isLoggedIn === 'false'" class="links">
+    <li>
+      <a [routerLink]="['/signup']">S'inscrire</a>
+    </li>
+    <li>
+      <a [routerLink]="['/login']">Se connecter</a>
+    </li>
+  </div>
 </ul>
