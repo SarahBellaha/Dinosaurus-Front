@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Transaction } from '../Interfaces/Transaction';
 import { User } from '../Interfaces/User';
+import { LoginService } from '../login.service';
 import { UserService } from '../Users-service/user.service';
 
 @Component({
@@ -13,7 +14,7 @@ export class UserRequestsComponent implements OnInit {
 
   @Input() requests?: Transaction[];
 
-  constructor(private route: ActivatedRoute, private userService: UserService) {}
+  constructor(private route: ActivatedRoute, private userService: UserService, private localStorage: LoginService) {}
   
 
   ngOnInit(): void {
@@ -21,7 +22,7 @@ export class UserRequestsComponent implements OnInit {
   }
 
   getRequests(): void {
-    const id = Number(this.route.snapshot.paramMap.get('toy_owner_id'));
+    const id = Number(this.localStorage.getData("userId"));
     this.userService.getRequests(id)
     .subscribe(requests => {
       this.requests = requests;

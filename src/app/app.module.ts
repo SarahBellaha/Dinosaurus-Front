@@ -17,6 +17,7 @@ import { UserService } from './Users-service/user.service';
 import { HttpClientModule } from '@angular/common/http';
 import { UserAnnoucementComponent } from './user-annoucement/user-annoucement.component';
 import { UserToysComponent } from './user-toys/user-toys.component';
+import { httpInterceptorsProviders } from './interceptor';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,7 @@ import { UserToysComponent } from './user-toys/user-toys.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [UserService],
+  providers: [UserService, httpInterceptorsProviders],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

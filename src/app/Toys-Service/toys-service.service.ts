@@ -4,6 +4,7 @@ import { catchError, map, tap } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Toy } from '../Interfaces/Toy';
 import { Transaction } from '../Interfaces/Transaction';
+import { ToyClass } from '../classes/toy';
 
 @Injectable({
   providedIn: 'root'
@@ -13,46 +14,30 @@ export class ToysServiceService {
   constructor(private http: HttpClient) {}
 
   private dinoUrl = "http://localhost:8080/toys";
+  private usersUrl = "http://localhost:8080/users";
 
   getToys(): Observable<Toy[]>{
 
-    const headers = new HttpHeaders();
-    headers.append('Content-type', 'application/json');
-    headers.append('Authorization', 'Basic ' + btoa("Steve:motdepasse"));
+    return this.http.get<Toy[]>(this.dinoUrl);
+  }
 
-    const httpOptions = {
-      headers: headers
-    }
+  getUserToys(id: number): Observable<Toy[]>{
 
-    return this.http.get<Toy[]>(this.dinoUrl,httpOptions);
+    return this.http.get<Toy[]>(`${this.usersUrl}/toys/${id}`);
   }
 
   getToyDetail(id: number): Observable<Toy>{
 
-    const headers = new HttpHeaders();
-    headers.append('Content-type', 'application/json');
-    headers.append('Authorization', 'Basic ' + btoa("Steve:motdepasse"));
-
-    const httpOptions = {
-      headers: headers
-    }
-
-    return this.http.get<Toy>(`${this.dinoUrl}/${id}`,httpOptions);
+    return this.http.get<Toy>(`${this.dinoUrl}/${id}`);
   }
 
   updateToyAvailability(id: number): Observable<Toy>{
 
-    const headers = new HttpHeaders();
-    headers.append('Content-type', 'application/json');
-    headers.append('Authorization', 'Basic ' + btoa("Steve:motdepasse"));
-
-    const httpOptions = {
-      headers: headers
-    }
-
-    return this.http.put<Toy>(`${this.dinoUrl}/${id}`,httpOptions);
+    return this.http.put<Toy>(`${this.dinoUrl}/${id}`, {});
   }
 
 
-  
+  public saveToy(toy: ToyClass) {
+    return this.http.post<ToyClass>(this.dinoUrl, toy);
+  }
 }

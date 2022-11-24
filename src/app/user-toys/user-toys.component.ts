@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Toy } from '../Interfaces/Toy';
+import { LoginService } from '../login.service';
+import { ToysServiceService } from '../Toys-Service/toys-service.service';
 
 @Component({
   selector: 'app-user-toys',
@@ -7,9 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserToysComponent implements OnInit {
 
-  constructor() { }
+  toys: Toy[] = [];
+
+  constructor(private toyService: ToysServiceService, private localStorage: LoginService) { }
 
   ngOnInit(): void {
+    this.getUserToys();
+    console.log("annonces")
   }
 
+  getUserToys(): void {
+    const id = Number(this.localStorage.getData("userId"));
+    this.toyService.getUserToys(id)
+    .subscribe(toys => {
+      this.toys = toys;
+      console.log(toys);
+    });
+  }
 }
