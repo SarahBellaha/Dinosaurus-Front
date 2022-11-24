@@ -1,0 +1,17 @@
+.nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: #c68d7073;
+    height: 30px;
+}
+
+.nav li {
+    list-style: none;
+}
+
+.nav>li>a {
+    text-decoration: none;
+    color: #000000a6;
+    font-weight: bold;
+    text-shadow: 2px 1px #fff8f84f;
+}
