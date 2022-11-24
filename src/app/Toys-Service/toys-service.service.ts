@@ -16,39 +16,19 @@ export class ToysServiceService {
   private usersUrl = 'http://localhost:8080/users';
 
   getToys(): Observable<Toy[]> {
-    const headers = new HttpHeaders();
-    headers.append('Content-type', 'application/json');
-    headers.append('Authorization', 'Basic ' + btoa('Steve:motdepasse'));
+    return this.http.get<Toy[]>(this.dinoUrl);
+  }
 
-    const httpOptions = {
-      headers: headers,
-    };
-
-    return this.http.get<Toy[]>(this.dinoUrl, httpOptions);
+  getUserToys(id: number): Observable<Toy[]> {
+    return this.http.get<Toy[]>(`${this.usersUrl}/toys/${id}`);
   }
 
   getToyDetail(id: number): Observable<Toy> {
-    const headers = new HttpHeaders();
-    headers.append('Content-type', 'application/json');
-    headers.append('Authorization', 'Basic ' + btoa('Steve:motdepasse'));
-
-    const httpOptions = {
-      headers: headers,
-    };
-
-    return this.http.get<Toy>(`${this.dinoUrl}/${id}`, httpOptions);
+    return this.http.get<Toy>(`${this.dinoUrl}/${id}`);
   }
 
   updateToyAvailability(id: number): Observable<Toy> {
-    const headers = new HttpHeaders();
-    headers.append('Content-type', 'application/json');
-    headers.append('Authorization', 'Basic ' + btoa('Steve:motdepasse'));
-
-    const httpOptions = {
-      headers: headers,
-    };
-
-    return this.http.put<Toy>(`${this.dinoUrl}/${id}`, httpOptions);
+    return this.http.put<Toy>(`${this.dinoUrl}/${id}`, {});
   }
 
   public findAll(): Observable<ToyClass[]> {

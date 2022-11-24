@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Transaction } from '../Interfaces/Transaction';
 import { User } from '../Interfaces/User';
+import { LoginService } from '../login.service';
 import { UserService } from '../Users-service/user.service';
 
 @Component({
@@ -13,7 +14,7 @@ export class UserReservationsComponent implements OnInit {
 
   @Input() reservations?: Transaction[];
 
-  constructor(private route: ActivatedRoute, private userService: UserService) {}
+  constructor(private route: ActivatedRoute, private userService: UserService, private localStorage: LoginService) {}
   
 
   ngOnInit(): void {
@@ -21,7 +22,7 @@ export class UserReservationsComponent implements OnInit {
   }
 
   getReservations(): void {
-    const id = Number(this.route.snapshot.paramMap.get('taker_user_id'));
+    const id = Number(this.localStorage.getData("userId"));
     this.userService.getReservations(id)
     .subscribe(reservations => {
       this.reservations = reservations;

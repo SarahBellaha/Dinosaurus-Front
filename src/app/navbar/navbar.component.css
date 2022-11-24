@@ -2,14 +2,36 @@
     display: flex;
     justify-content: space-around;
     background-color: #c68d7073;
-    height: 30px;
+    height: 10vw;
+    align-items: center;
 }
 
-.nav li {
+.links {
+    width: 40%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.nav-logo {
+    width: 10vw;
+}
+
+.nav-logo > img {
+    width: 100%;
+}
+
+.links > li {
+    width: 20vw;
+    text-align: center;
+}
+
+.nav > li {
     list-style: none;
+    width: 20%;
+    text-align: center;
 }
 
-.nav>li>a {
+.nav>li>a, div > li > a {
     text-decoration: none;
     color: #000000a6;
     font-weight: bold;

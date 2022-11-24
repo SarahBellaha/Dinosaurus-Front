@@ -1,24 +1,9 @@
 <app-usernav></app-usernav>
-<div class="card my-5">
-  <div class="card-body">
-    <table class="table table-bordered table-striped">
-      <thead class="thead-dark">
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Name</th>
-          <th scope="col">Email</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let toy of toys">
-          <td>{{ toy.id }}</td>
-          <td>{{ toy.name }}</td>
-          <td>{{ toy.description }}</td>
-          <td>
-            <a href="{{ toy.picture }}">{{ toy.picture }}</a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+<h2>Vos annonces</h2>
+<div class="body-toys">
+  <div class="toy-card" *ngFor="let item of toys">
+    <img [src]="item.picture" [alt]="item.name" />
+    <p>{{ item.name }}</p>
+    <a [routerLink]="['./', item.id]">{{ item.name }}</a>
   </div>
 </div>

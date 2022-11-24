@@ -11,50 +11,20 @@ import { UserClass } from '../classes/user';
 export class UserService {
   constructor(private http: HttpClient) {}
 
+  constructor(private http: HttpClient) {}
+
   private usersUrl = 'http://localhost:8080/users';
 
-  //getUserDetail(id: number, username: string, password: string): Observable<User>{
   getUserDetail(id: number): Observable<User> {
-    const headers = new HttpHeaders();
-    headers.append('Content-type', 'application/json');
-    headers.append('Authorization', 'Basic ' + btoa(`Steve:motdepasse`));
-    // headers.append('Authorization', 'Basic ' + btoa(`${username}:${password}`));
-
-    const httpOptions = {
-      headers: headers,
-    };
-
-    return this.http.get<User>(`${this.usersUrl}/${id}`, httpOptions);
+    return this.http.get<User>(`${this.usersUrl}/${id}`);
   }
 
   getRequests(id: number): Observable<Transaction[]> {
-    const headers = new HttpHeaders();
-    headers.append('Content-type', 'application/json');
-    headers.append('Authorization', 'Basic ' + btoa(`Steve:motdepasse`));
-
-    const httpOptions = {
-      headers: headers,
-    };
-
-    return this.http.get<Transaction[]>(
-      `${this.usersUrl}/requests/${id}`,
-      httpOptions
-    );
+    return this.http.get<Transaction[]>(`${this.usersUrl}/requests/${id}`);
   }
 
   getReservations(id: number): Observable<Transaction[]> {
-    const headers = new HttpHeaders();
-    headers.append('Content-type', 'application/json');
-    headers.append('Authorization', 'Basic ' + btoa(`Steve:motdepasse`));
-
-    const httpOptions = {
-      headers: headers,
-    };
-
-    return this.http.get<Transaction[]>(
-      `${this.usersUrl}/reservations/${id}`,
-      httpOptions
-    );
+    return this.http.get<Transaction[]>(`${this.usersUrl}/reservations/${id}`);
   }
 
   // ---- Ajout transaction à la réservation du jouet ----
@@ -64,18 +34,9 @@ export class UserService {
     toyId: number,
     ownerId: number
   ): Observable<Transaction> {
-    const headers = new HttpHeaders();
-    headers.append('Content-type', 'application/json');
-    headers.append('Authorization', 'Basic ' + btoa('Steve:motdepasse'));
-
-    const httpOptions = {
-      headers: headers,
-    };
-
     return this.http.post<Transaction>(
       `${this.usersUrl}/${takerId}/${toyId}/transactions`,
-      { toyOwnerId: ownerId },
-      httpOptions
+      { toyOwnerId: ownerId }
     );
   }
 

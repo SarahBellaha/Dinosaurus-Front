@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToyClass } from '../classes/toy';
-
+import { Toy } from '../Interfaces/Toy';
+import { LoginService } from '../login.service';
 import { ToysServiceService } from '../Toys-Service/toys-service.service';
 
 @Component({
@@ -24,6 +25,5 @@ export class UserAnnoucementComponent implements OnInit {
   onSubmit() {
     this.toyService.save(this.toy).subscribe(() => this.gotoToyList());
   }
-
   ngOnInit(): void {}
 }
