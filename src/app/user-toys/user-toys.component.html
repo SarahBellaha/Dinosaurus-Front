@@ -1,1 +1,24 @@
 <app-usernav></app-usernav>
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let toy of toys">
+          <td>{{ toy.id }}</td>
+          <td>{{ toy.name }}</td>
+          <td>{{ toy.description }}</td>
+          <td>
+            <a href="{{ toy.picture }}">{{ toy.picture }}</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

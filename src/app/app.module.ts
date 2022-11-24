@@ -32,14 +32,9 @@ import { UserToysComponent } from './user-toys/user-toys.component';
     SignupComponent,
     UsernavComponent,
     UserAnnoucementComponent,
-    UserToysComponent
+    UserToysComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [UserService],
   bootstrap: [AppComponent],
 })
