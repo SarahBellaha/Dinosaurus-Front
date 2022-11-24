@@ -42,5 +42,10 @@ export class UserService {
     return this.http.post<UserClass>(this.usersUrl, user);
   }
 
+  removeTransaction(id: number){
+    console.log(id, "transaction")
+    return this.http.delete<Transaction>(`http://localhost:8080/transactions/${id}`);
+  }
+
 
 }

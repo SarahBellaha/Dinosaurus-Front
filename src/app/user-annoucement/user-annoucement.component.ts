@@ -21,8 +21,8 @@ export class UserAnnoucementComponent implements OnInit {
     this.router.navigateByUrl('/useraccount/toys');
   }
   onSubmit() {
-    //this.toyService.saveToy(this.toy).subscribe(() => this.gotoToyList());
-    console.log(this.toy);
+    const id = Number(this.localStorage.getData("userId"));
+    this.toyService.saveToy(this.toy, id).subscribe(() => this.gotoToyList());
   }
   ngOnInit(): void {}
 }

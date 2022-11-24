@@ -55,9 +55,9 @@ export class ToyDescriptionComponent implements OnInit {
   }
 
   
-  async makeReservation(ownerId: number): Promise<void> {
+  async makeReservation(): Promise<void> {
     await this.updateAvailability();
-    //this.addTransaction(ownerId: number);
+    this.addTransaction();
   }
 
 }

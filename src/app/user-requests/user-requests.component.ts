@@ -30,4 +30,9 @@ export class UserRequestsComponent implements OnInit {
     });
   }
 
+  acceptRequest(id: number) {
+    console.log(id);
+    this.userService.removeTransaction(id);
+  }
+
 }
