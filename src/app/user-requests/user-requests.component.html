@@ -1,5 +1,5 @@
 <app-usernav></app-usernav>
-<p class="p">
+<p class="p" *ngIf="requests">
   Vos annonces ont trouvé preneur ! Acceptez les pour finaliser l'échange :)
 </p>
 <div class="requests" *ngFor="let item of requests">

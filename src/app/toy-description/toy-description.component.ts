@@ -56,8 +56,10 @@ export class ToyDescriptionComponent implements OnInit {
 
   
   async makeReservation(): Promise<void> {
-    await this.updateAvailability();
+    if (this.toy?.available === true){
+      await this.updateAvailability();
     this.addTransaction();
+    }
   }
 
 }

@@ -27,4 +27,10 @@ export class UserToysComponent implements OnInit {
       console.log(toys);
     });
   }
+
+  deleteToy(id: number) {
+    console.log(id);
+    this.toyService.removeToy(id).subscribe((data)=> console.log(data));
+    window.location.reload();
+  }
 }
