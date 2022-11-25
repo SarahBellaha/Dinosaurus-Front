@@ -1,4 +1,11 @@
-h1 {
+.title {
     text-align: center;
-    margin-top: 50px;
+        margin-top: 50px;
+        height: 55vh;
+        color: white;
+        text-shadow: 3px 2px #0c3e05;
+}
+
+.home {
+    background: center/cover url("https://www.pixelstalk.net/wp-content/uploads/2016/05/Cartoon-lion-pics-for-kids-wallpaper.jpg");
 }

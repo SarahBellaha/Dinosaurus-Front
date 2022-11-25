@@ -32,7 +32,7 @@ export class UserRequestsComponent implements OnInit {
 
   acceptRequest(id: number) {
     console.log(id);
-    this.userService.removeTransaction(id);
+    this.userService.removeTransaction(id).subscribe((data)=> console.log(data));
   }
 
 }
