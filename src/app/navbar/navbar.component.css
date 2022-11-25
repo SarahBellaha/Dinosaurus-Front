@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-around;
     background-color: #c68d7073;
-    height: 10vw;
+    height: 14vh;
     align-items: center;
 }
 
@@ -13,7 +13,7 @@
 }
 
 .nav-logo {
-    width: 10vw;
+    width: 14vh;
 }
 
 .nav-logo > img {

@@ -18,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { UserAnnoucementComponent } from './user-annoucement/user-annoucement.component';
 import { UserToysComponent } from './user-toys/user-toys.component';
 import { httpInterceptorsProviders } from './interceptor';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { httpInterceptorsProviders } from './interceptor';
     SignupComponent,
     UsernavComponent,
     UserAnnoucementComponent,
-    UserToysComponent
+    UserToysComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

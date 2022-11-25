@@ -10,6 +10,8 @@ import { ToysServiceService } from '../Toys-Service/toys-service.service';
 export class ToysComponent implements OnInit {
 
   toys: Toy[] = [];
+  filteredToys: Toy[] = [];
+  inputValue: string = "";
 
   constructor(private toyService: ToysServiceService) { }
 
@@ -23,6 +25,15 @@ export class ToysComponent implements OnInit {
       this.toys = toys;
       console.log(toys);
     });
+  }
+
+  filteredList(){
+    if(this.inputValue != "") {
+      this.toys = this.toys.filter(toy => toy.name.startsWith(this.inputValue));
+    } else {
+      this.getToys();
+    }
+    
   }
 
 }
