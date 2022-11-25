@@ -1,0 +1,23 @@
+.toy-card{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.searchBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.toy-card img {
+    width: 150px;
+}
+
+.body-toys {
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
+}

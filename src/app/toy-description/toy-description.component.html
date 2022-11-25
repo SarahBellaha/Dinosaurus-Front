@@ -1,0 +1,14 @@
+<div *ngIf="toy" class="toy-description">
+  <img [src]="toy.picture" [alt]="toy.name" />
+  <div class="toy-details">
+    <h1>{{ toy.name }}</h1>
+    <p>{{ toy.description }}</p>
+    <button
+      type="button"
+      [ngClass]="toy.available === true ? 'beige button' : 'green button'"
+      (click)="makeReservation()"
+    >
+      {{ toy.available === true ? "Réserver ce jouet" : "Jouet réservé" }}
+    </button>
+  </div>
+</div>

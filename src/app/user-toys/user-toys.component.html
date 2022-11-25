@@ -1,0 +1,16 @@
+<app-usernav></app-usernav>
+<h2>Vos annonces</h2>
+<div class="body-toys">
+  <div class="toy-card" *ngFor="let item of toys">
+    <img [src]="item.picture" [alt]="item.name" />
+    <p>{{ item.name }}</p>
+    <a [routerLink]="['../../toys/', item.id]">Lien vers l'annonce</a>
+    <button
+      class="user-toys-buttons"
+      type="button"
+      (click)="deleteToy(item.id)"
+    >
+      Supprimer l'annonce
+    </button>
+  </div>
+</div>

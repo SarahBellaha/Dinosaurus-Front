@@ -1,0 +1,39 @@
+.nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: #c68d7073;
+    height: 14vh;
+    align-items: center;
+}
+
+.links {
+    width: 40%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.nav-logo {
+    width: 14vh;
+}
+
+.nav-logo > img {
+    width: 100%;
+}
+
+.links > li {
+    width: 20vw;
+    text-align: center;
+}
+
+.nav > li {
+    list-style: none;
+    width: 20%;
+    text-align: center;
+}
+
+.nav>li>a, div > li > a {
+    text-decoration: none;
+    color: #000000a6;
+    font-weight: bold;
+    text-shadow: 2px 1px #fff8f84f;
+}

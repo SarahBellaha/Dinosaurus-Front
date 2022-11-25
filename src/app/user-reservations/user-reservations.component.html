@@ -1,0 +1,17 @@
+<app-usernav></app-usernav>
+<p class="p"></p>
+<div class="requests">
+  <div class="request-card" *ngFor="let item of reservations">
+    <img
+      class="request-img"
+      [src]="item.tradedToy.picture"
+      [alt]="item.tradedToy.name"
+    />
+    <div class="request-infos">
+      <p>{{ item.tradedToy.name }}</p>
+      <a [routerLink]="['../../toys', item.tradedToy.id]"
+        >Lien vers votre annonce</a
+      >
+    </div>
+  </div>
+</div>

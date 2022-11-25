@@ -1,0 +1,18 @@
+.usernav {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #bc5c2b73;
+    height: 30px;
+    margin-top: 0;
+}
+
+.usernav li {
+    list-style: none;
+}
+
+.usernav > li > a{
+    text-decoration: none;
+    color: #000000a6;
+    font-weight: bold;
+    text-shadow: 2px 1px #fff8f84f;
+}

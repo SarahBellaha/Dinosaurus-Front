@@ -1,0 +1,49 @@
+.toy-description{
+    display: flex;
+    width: 80vw;
+    margin: 50px auto;
+}
+
+.toy-description img{
+    width: 35%;
+    margin: 2.5% 4%;
+    border-radius: 10px;
+}
+
+.toy-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 65%;
+    border-radius: 10px;
+    border: 2px solid #bc5c2b73;
+    margin: 2.5% 4%;
+    background-color: #d14f0c12;
+}
+
+p {
+    font-size: 20px;
+}
+h1 {
+    font-size: 1.5rem;
+}
+
+.button {
+    color: white;
+    border: none;
+    width: 160px;
+    height: 32px;
+    margin-bottom: 10px;
+    font-size: 17px;
+    text-shadow: 1px 1px rgb(50, 50, 49);
+    border-radius: 20px;
+}
+
+.green {
+    background-color: rgb(114, 181, 114);
+}
+
+.beige {
+    background-color: rgb(234 179 138);
+}

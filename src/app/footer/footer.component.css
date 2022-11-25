@@ -1,0 +1,13 @@
+.small {
+    font-size: 10px;
+    font-style: italic;
+    text-align: center;
+}
+
+.footer {
+    background-color: #c68d7073;
+    height: 12vh;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}

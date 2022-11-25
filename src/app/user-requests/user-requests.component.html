@@ -1,0 +1,24 @@
+<app-usernav></app-usernav>
+<p class="p" *ngIf="requests">
+  Vos annonces ont trouvé preneur ! Acceptez les pour finaliser l'échange :)
+</p>
+<div class="requests" *ngFor="let item of requests">
+  <div class="request-card">
+    <img
+      class="request-img"
+      [src]="item.tradedToy.picture"
+      [alt]="item.tradedToy.name"
+    />
+    <div class="request-infos">
+      <p>{{ item.tradedToy.name }}</p>
+      <a [routerLink]="['../../toys', item.tradedToy.id]"
+        >Lien vers votre annonce</a
+      >
+    </div>
+    <div class="request-button">
+      <button type="button" (click)="acceptRequest(item.id)">
+        Valider l'échange
+      </button>
+    </div>
+  </div>
+</div>
