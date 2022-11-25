@@ -10,7 +10,7 @@ import { LoginService } from '../login.service';
 })
 export class NavbarComponent implements OnInit {
 
-  @Input() isLoggedIn: string| null = this.localStorage.getData("loggedIn");
+  @Input() isLoggedIn: string = this.localStorage.getData("loggedIn") || "false";
   constructor(private localStorage: LoginService, private router: Router) { }
 
   ngOnInit(): void {

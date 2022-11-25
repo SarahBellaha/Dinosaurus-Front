@@ -2,14 +2,33 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    justify-content: flex-end;
+}
+
+h2 {
+    margin-bottom: 25px;
+}
+
+.user-toys-buttons {
+    border: none;
+    border-radius: 15px;
+    margin-top: 10px;
+    width: 180px;
+    height: 30px;
+    background-color: #8b000096;
+    color: white;
 }
 
 .toy-card img {
     width: 150px;
 }
 
+.toy-card > a {
+    color: #ebad7f;
+    text-decoration: underline;
+}
+
 .body-toys {
     display: flex;
     justify-content: space-around;
-    width: 70%;
 }

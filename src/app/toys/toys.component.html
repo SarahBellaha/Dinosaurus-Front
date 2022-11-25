@@ -1,7 +1,14 @@
 <div>
   <div class="searchBar">
     <label>Barre de recherche</label>
-    <input type="text" id="search" name="search" />
+    <input
+      type="text"
+      id="search"
+      name="search"
+      [(ngModel)]="inputValue"
+      #inputstring="ngModel"
+      (ngModelChange)="filteredList()"
+    />
   </div>
   <div class="body-toys">
     <div class="toy-card" *ngFor="let item of toys">

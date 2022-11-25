@@ -1,9 +1,17 @@
 <app-usernav></app-usernav>
-<h2>Vos réservations de jouets :</h2>
-<div class="body-toys">
-  <div class="toy-card" *ngFor="let item of reservations">
-    <img [src]="item.tradedToy.picture" [alt]="item.tradedToy.name" />
-    <p>{{ item.tradedToy.name }}</p>
-    <a [routerLink]="['./', item.id]">{{ item.tradedToy.name }}</a>
+<p class="p"></p>
+<div class="requests">
+  <div class="request-card" *ngFor="let item of reservations">
+    <img
+      class="request-img"
+      [src]="item.tradedToy.picture"
+      [alt]="item.tradedToy.name"
+    />
+    <div class="request-infos">
+      <p>{{ item.tradedToy.name }}</p>
+      <a [routerLink]="['../../toys', item.tradedToy.id]"
+        >Lien vers votre annonce</a
+      >
+    </div>
   </div>
 </div>
