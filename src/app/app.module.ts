@@ -14,7 +14,10 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { UsernavComponent } from './usernav/usernav.component';
 import { UserService } from './Users-service/user.service';
-import { HttpClientModule } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 import { UserAnnoucementComponent } from './user-annoucement/user-annoucement.component';
 import { UserToysComponent } from './user-toys/user-toys.component';
 import { httpInterceptorsProviders } from './interceptor';
@@ -35,15 +38,14 @@ import { FooterComponent } from './footer/footer.component';
     UsernavComponent,
     UserAnnoucementComponent,
     UserToysComponent,
-    FooterComponent
+    FooterComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  providers: [
+    UserService,
+    httpInterceptorsProviders,
+    provideHttpClient(withInterceptorsFromDi()),
   ],
-  providers: [UserService, httpInterceptorsProviders],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
