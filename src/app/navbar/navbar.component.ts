@@ -6,7 +6,8 @@ import { LoginService } from '../login.service';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  styleUrls: ['./navbar.component.css'],
+  standalone: false,
 })
 export class NavbarComponent implements OnInit {
 
@@ -21,5 +22,4 @@ export class NavbarComponent implements OnInit {
     this.localStorage.saveData("loggedIn", "false");
     window.location.replace('http://localhost:4200/home');
   }
-
 }

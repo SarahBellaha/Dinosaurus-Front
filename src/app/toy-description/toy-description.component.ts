@@ -7,9 +7,10 @@ import { ToysServiceService } from '../Toys-Service/toys-service.service';
 import { UserService } from '../Users-service/user.service';
 
 @Component({
-  selector: 'app-toy-description',
-  templateUrl: './toy-description.component.html',
-  styleUrls: ['./toy-description.component.css']
+    selector: 'app-toy-description',
+    templateUrl: './toy-description.component.html',
+    styleUrls: ['./toy-description.component.css'],
+    standalone: false
 })
 export class ToyDescriptionComponent implements OnInit {
 

@@ -3,9 +3,10 @@ import { Toy } from '../Interfaces/Toy';
 import { ToysServiceService } from '../Toys-Service/toys-service.service';
 
 @Component({
-  selector: 'app-toys',
-  templateUrl: './toys.component.html',
-  styleUrls: ['./toys.component.css']
+    selector: 'app-toys',
+    templateUrl: './toys.component.html',
+    styleUrls: ['./toys.component.css'],
+    standalone: false
 })
 export class ToysComponent implements OnInit {
 

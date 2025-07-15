@@ -6,9 +6,10 @@ import { LoginService } from '../login.service';
 import { UserService } from '../Users-service/user.service';
 
 @Component({
-  selector: 'app-user-reservations',
-  templateUrl: './user-reservations.component.html',
-  styleUrls: ['./user-reservations.component.css']
+    selector: 'app-user-reservations',
+    templateUrl: './user-reservations.component.html',
+    styleUrls: ['./user-reservations.component.css'],
+    standalone: false
 })
 export class UserReservationsComponent implements OnInit {
 

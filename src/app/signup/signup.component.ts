@@ -4,9 +4,10 @@ import { UserClass } from '../classes/user';
 import { UserService } from '../Users-service/user.service';
 
 @Component({
-  selector: 'app-signup',
-  templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css'],
+    selector: 'app-signup',
+    templateUrl: './signup.component.html',
+    styleUrls: ['./signup.component.css'],
+    standalone: false
 })
 export class SignupComponent implements OnInit {
   @Input() user: UserClass;

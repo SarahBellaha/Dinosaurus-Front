@@ -8,6 +8,7 @@ import { LoginService } from '../login.service';
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
+  standalone: false,
 })
 export class LoginComponent implements OnInit {
   @Input()
@@ -29,17 +30,21 @@ export class LoginComponent implements OnInit {
       this.userInfos = user;
       this.isLoggedIn = true;
 
-      if(this.isLoggedIn === true && this.userInfos) {
-      this.localStorage.saveData("userId", `${this.userInfos.id}`);
-      this.localStorage.saveData("userEmail", `${this.userInfos.email}`);
-      this.localStorage.saveData("userPassword", `${this.userInfos.password}`);
-      this.localStorage.saveData("loggedIn", "true");
-      window.location.replace('http://localhost:4200/useraccount/informations');
-    }
-    });
-    
+        if (this.isLoggedIn === true && this.userInfos) {
+          this.localStorage.saveData('userId', `${this.userInfos.id}`);
+          this.localStorage.saveData('userEmail', `${this.userInfos.email}`);
+          this.localStorage.saveData(
+            'userPassword',
+            `${this.userInfos.password}`
+          );
+          this.localStorage.saveData('loggedIn', 'true');
+          window.location.replace(
+            'http://localhost:4200/useraccount/informations'
+          );
+        }
+      });
   }
   // Add user to DB
 
-  ngOnInit(): void {}
+ 
 }

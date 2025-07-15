@@ -4,9 +4,10 @@ import { LoginService } from '../login.service';
 import { ToysServiceService } from '../Toys-Service/toys-service.service';
 
 @Component({
-  selector: 'app-user-toys',
-  templateUrl: './user-toys.component.html',
-  styleUrls: ['./user-toys.component.css']
+    selector: 'app-user-toys',
+    templateUrl: './user-toys.component.html',
+    styleUrls: ['./user-toys.component.css'],
+    standalone: false
 })
 export class UserToysComponent implements OnInit {
 

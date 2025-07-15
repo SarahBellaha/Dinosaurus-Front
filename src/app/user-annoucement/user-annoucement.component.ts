@@ -6,9 +6,10 @@ import { LoginService } from '../login.service';
 import { ToysServiceService } from '../Toys-Service/toys-service.service';
 
 @Component({
-  selector: 'app-user-annoucement',
-  templateUrl: './user-annoucement.component.html',
-  styleUrls: ['./user-annoucement.component.css']
+    selector: 'app-user-annoucement',
+    templateUrl: './user-annoucement.component.html',
+    styleUrls: ['./user-annoucement.component.css'],
+    standalone: false
 })
 export class UserAnnoucementComponent implements OnInit {
   toy: ToyClass = new ToyClass();

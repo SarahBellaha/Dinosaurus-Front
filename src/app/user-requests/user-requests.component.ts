@@ -6,9 +6,10 @@ import { LoginService } from '../login.service';
 import { UserService } from '../Users-service/user.service';
 
 @Component({
-  selector: 'app-user-requests',
-  templateUrl: './user-requests.component.html',
-  styleUrls: ['./user-requests.component.css']
+    selector: 'app-user-requests',
+    templateUrl: './user-requests.component.html',
+    styleUrls: ['./user-requests.component.css'],
+    standalone: false
 })
 export class UserRequestsComponent implements OnInit {
 

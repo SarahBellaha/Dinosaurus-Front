@@ -6,9 +6,10 @@ import { ToysServiceService } from '../Toys-Service/toys-service.service';
 import { UserService } from '../Users-service/user.service';
 
 @Component({
-  selector: 'app-user-infos',
-  templateUrl: './user-infos.component.html',
-  styleUrls: ['./user-infos.component.css']
+    selector: 'app-user-infos',
+    templateUrl: './user-infos.component.html',
+    styleUrls: ['./user-infos.component.css'],
+    standalone: false
 })
 export class UserInfosComponent implements OnInit {
 
