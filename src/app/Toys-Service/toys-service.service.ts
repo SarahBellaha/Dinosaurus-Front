@@ -1,10 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { catchError, map, tap } from 'rxjs';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 import { Toy } from '../Interfaces/Toy';
-import { Transaction } from '../Interfaces/Transaction';
-import { ToyClass } from '../classes/toy';
 
 @Injectable({
   providedIn: 'root'
@@ -37,8 +34,8 @@ export class ToysServiceService {
   }
 
 
-  public saveToy(toy: ToyClass, id: number) {
-    return this.http.post<ToyClass>(`${this.usersUrl}/${id}/toys`, toy);
+  public saveToy(toy: Toy, id: number) {
+    return this.http.post<Toy>(`${this.usersUrl}/${id}/toys`, toy);
   }
 
   removeToy(id: number){
