@@ -11,7 +11,7 @@ import { ToysServiceService } from '../Toys-Service/toys-service.service';
     standalone: false
 })
 export class UserAnnoucementComponent implements OnInit {
-  private readonly toy!: Toy 
+  readonly toy!: Toy 
   private readonly router: Router = inject(Router);
   private readonly toyService: ToysServiceService = inject(ToysServiceService);
   private readonly localStorage: LoginService = inject(LoginService);
