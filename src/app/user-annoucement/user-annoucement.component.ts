@@ -1,6 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ToyClass } from '../classes/toy';
 import { Toy } from '../Interfaces/Toy';
 import { LoginService } from '../login.service';
 import { ToysServiceService } from '../Toys-Service/toys-service.service';
@@ -12,8 +11,10 @@ import { ToysServiceService } from '../Toys-Service/toys-service.service';
     standalone: false
 })
 export class UserAnnoucementComponent implements OnInit {
-  toy: ToyClass = new ToyClass();
-  constructor(private router: Router, private toyService: ToysServiceService, private localStorage: LoginService) {}
+  private readonly toy!: Toy 
+  private readonly router: Router = inject(Router);
+  private readonly toyService: ToysServiceService = inject(ToysServiceService);
+  private readonly localStorage: LoginService = inject(LoginService);
   // Add user to DB
   gotoHome() {
     this.router.navigateByUrl('/home');
