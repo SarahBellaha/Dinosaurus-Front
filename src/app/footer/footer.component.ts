@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TEXT } from 'src/shared/constants';
 
 @Component({
   selector: 'app-footer',
@@ -6,4 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./footer.component.css'],
   standalone: false,
 })
-export class FooterComponent {}
+export class FooterComponent {
+  TEXT = TEXT
+}
