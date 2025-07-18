@@ -1,27 +1,16 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { User } from '../classes/user';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
+import { User } from '../Interfaces/User';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserServiceService {
-  private usersUrl: string;
+  private readonly usersUrl: string = '/api/users';
 
-  constructor(private http: HttpClient) {
-    this.usersUrl = 'http://localhost:8080/users';
-  }
+  private readonly http = inject(HttpClient);
   public findAll(): Observable<User[]> {
-    const headers = new HttpHeaders();
-    headers.append('Content-type', 'application/json');
-    headers.append('Authorization', 'Basic ' + btoa('Steve:motdepasse'));
-
-    const httpOptions = {
-      headers: headers,
-    };
-    return this.http.get<User[]>(this.usersUrl, httpOptions);
+    return this.http.get<User[]>(this.usersUrl);
   }
-
-  
 }

@@ -1,21 +1,27 @@
 import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from "@angular/common/http";
-import { Injectable } from "@angular/core";
+import { inject, Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { LoginService } from "../login.service";
 
 @Injectable()
 export class HeaderInterceptor implements HttpInterceptor {
-    constructor(private localStorage: LoginService) {}
 
-    intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        let base64encodedData = 
-        //Buffer.from(`${this.localStorage.getData("userEmail")}:${this.localStorage.getData("userPassword")}`)
-        Buffer.from("Steve:motdepasse")
-        .toString('base64');
+    loginService: LoginService = inject(LoginService);
 
-            const headerReq = req.clone({
-                headers: req.headers.set("Authorization", `Basic ${base64encodedData}`)
-            });
-            return next.handle(headerReq);
+    private base64Encode(str: string): string {
+        return window.btoa(encodeURIComponent(str));
     }
+
+   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    const username = this.loginService.getData('userEmail') ?? 'test';
+    const password = this.loginService.getData('userPassword') ?? 'password';
+
+    const credentials = this.base64Encode(`${username}:${password}`);
+
+    const authReq = req.clone({
+      headers: req.headers.set('Authorization', `Basic ${credentials}`)
+    });
+
+    return next.handle(authReq);
+  }
 }
