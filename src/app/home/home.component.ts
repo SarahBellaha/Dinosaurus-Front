@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TEXT } from 'src/shared/constants';
 
 @Component({
   selector: 'app-home',
@@ -6,4 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css'],
   standalone: false,
 })
-export class HomeComponent {}
+export class HomeComponent {
+  TEXT = TEXT
+}
