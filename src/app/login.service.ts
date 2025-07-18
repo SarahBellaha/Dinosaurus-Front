@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { UserClass } from './classes/user';
 import { User } from './Interfaces/User';
 
 @Injectable({
@@ -27,7 +26,7 @@ export class LoginService {
     localStorage.clear();
   }
 
-  url: string = 'http://localhost:8080/login';
+  url: string = '/api/login';
 
   public logUser(userEmail: string, userPassword: string): Observable<User>{
     const body = {
