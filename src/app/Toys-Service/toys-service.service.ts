@@ -9,8 +9,8 @@ import { Toy } from '../Interfaces/Toy';
 export class ToysServiceService {
   private readonly http: HttpClient = inject(HttpClient);
 
-  private readonly toyUrl = 'http://localhost:8080/toys';
-  private readonly usersUrl = 'http://localhost:8080/users';
+  private readonly toyUrl = '/api/toys';
+  private readonly usersUrl = '/api/users';
 
   getToys(): Observable<Toy[]> {
     return this.http.get<Toy[]>(this.toyUrl);
