@@ -2,6 +2,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { Toy } from '../Interfaces/Toy';
 import { LoginService } from '../login.service';
 import { ToysService } from '../service/toys.service';
+import { ANNOUNCEMENT } from 'src/shared/constants';
 
 @Component({
   selector: 'app-user-toys',
@@ -13,6 +14,7 @@ export class UserToysComponent implements OnInit {
   toys: Toy[] = [];
   private readonly toyService: ToysService = inject(ToysService);
   private readonly localStorage: LoginService = inject(LoginService);
+  readonly ANNOUNCEMENT = ANNOUNCEMENT;
 
   ngOnInit(): void {
     this.getUserToys();

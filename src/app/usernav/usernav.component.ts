@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ANNOUNCEMENT } from 'src/shared/constants';
 
 @Component({
   selector: 'app-usernav',
@@ -6,4 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./usernav.component.css'],
   standalone: false,
 })
-export class UsernavComponent {}
+export class UsernavComponent {
+  readonly ANNOUNCEMENT = ANNOUNCEMENT;
+}

@@ -1,17 +1,19 @@
 <ul class="usernav">
   <li>
-    <a [routerLink]="['../informations']">Informations</a>
+    <a [routerLink]="['../informations']">{{ ANNOUNCEMENT.informations }}</a>
   </li>
   <li>
-    <a [routerLink]="['../requests']">Demandes en cours</a>
+    <a [routerLink]="['../requests']">{{ ANNOUNCEMENT.currentRequests }}</a>
   </li>
   <li>
-    <a [routerLink]="['../reservations']">Réservations en cours</a>
+    <a [routerLink]="['../reservations']">{{
+      ANNOUNCEMENT.currentReservations
+    }}</a>
   </li>
   <li>
-    <a [routerLink]="['../toys']">Mes annonces</a>
+    <a [routerLink]="['../toys']">{{ ANNOUNCEMENT.myAnnouncements }}</a>
   </li>
   <li>
-    <a [routerLink]="['../post-toys']">Poster une annonce</a>
+    <a [routerLink]="['../post-toys']">{{ ANNOUNCEMENT.postAnnouncement }}</a>
   </li>
 </ul>

@@ -9,9 +9,9 @@
     />
     <div class="request-infos">
       <p>{{ item.tradedToy.name }}</p>
-      <a [routerLink]="['../../toys', item.tradedToy.id]"
-        >Lien vers votre annonce</a
-      >
+      <a [routerLink]="['../../toys', item.tradedToy.id]">{{
+        ANNOUNCEMENT.link
+      }}</a>
     </div>
   </div>
 </div>

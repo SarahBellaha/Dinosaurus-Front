@@ -2,6 +2,7 @@ import { Component, inject, Input, OnInit } from '@angular/core';
 import { Transaction } from '../Interfaces/Transaction';
 import { LoginService } from '../login.service';
 import { UserService } from '../service/user.service';
+import { ANNOUNCEMENT } from 'src/shared/constants';
 
 @Component({
   selector: 'app-user-requests',
@@ -14,6 +15,7 @@ export class UserRequestsComponent implements OnInit {
 
   private readonly userService: UserService = inject(UserService);
   private readonly localStorage: LoginService = inject(LoginService);
+  readonly ANNOUNCEMENT = ANNOUNCEMENT;
 
   ngOnInit(): void {
     this.getRequests();

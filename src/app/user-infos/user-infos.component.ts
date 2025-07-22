@@ -2,6 +2,7 @@ import { Component, inject, Input, OnInit } from '@angular/core';
 import { User } from '../Interfaces/User';
 import { LoginService } from '../login.service';
 import { UserService } from '../service/user.service';
+import { TEXT } from 'src/shared/constants';
 
 @Component({
   selector: 'app-user-infos',
@@ -14,6 +15,7 @@ export class UserInfosComponent implements OnInit {
 
   private readonly localStorage: LoginService = inject(LoginService);
   private readonly userService: UserService = inject(UserService);
+  readonly TEXT = TEXT;
 
   ngOnInit(): void {
     this.getUser();

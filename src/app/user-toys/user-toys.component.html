@@ -1,5 +1,5 @@
 <app-usernav></app-usernav>
-<h2>Vos annonces</h2>
+<h2>{{ ANNOUNCEMENT.myAnnouncements }}</h2>
 <div class="body-toys">
   <div class="toy-card" *ngFor="let item of toys">
     <img [src]="item.picture" [alt]="item.name" />
@@ -10,7 +10,7 @@
       type="button"
       (click)="deleteToy(item.id)"
     >
-      Supprimer l'annonce
+      {{ ANNOUNCEMENT.cancelAnnouncement }}
     </button>
   </div>
 </div>
