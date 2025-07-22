@@ -2,7 +2,7 @@
   <div class="card-body">
     <form (ngSubmit)="onSubmit()" #userForm="ngForm">
       <div class="form-group">
-        <label for="email">{{ TEXT.mail }}</label>
+        <label for="email">{{ REGISTER.mail }}</label>
         <input
           type="text"
           [(ngModel)]="user.email"
@@ -19,7 +19,7 @@
       </div>
 
       <div class="form-group">
-        <label for="password">{{ TEXT.password }}</label>
+        <label for="password">{{ REGISTER.password }}</label>
         <input
           type="text"
           [(ngModel)]="user.password"
@@ -39,7 +39,7 @@
         [disabled]="!userForm.form.valid"
         class="btn btn-info"
       >
-        {{ TEXT.submit }}
+        {{ REGISTER.submit }}
       </button>
     </form>
   </div>

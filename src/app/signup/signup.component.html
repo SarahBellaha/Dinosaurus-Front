@@ -1,9 +1,9 @@
-<h1>Page d'inscription</h1>
+<h1>{{ REGISTER.title }}</h1>
 <div class="card my-5">
   <div class="card-body">
     <form (ngSubmit)="onSubmit()" #userForm="ngForm">
       <div class="form-group">
-        <label for="firstname">firstname</label>
+        <label for="firstname">{{ REGISTER.firstName }}</label>
         <input
           type="text"
           [(ngModel)]="user.firstname"
@@ -16,11 +16,11 @@
         />
       </div>
       <div [hidden]="!firstname.pristine" class="alert alert-danger">
-        firstname is required
+        {{ ERRORS.firstnameRequired }}
       </div>
 
       <div class="form-group">
-        <label for="lastname">lastname</label>
+        <label for="lastname">{{ REGISTER.lastName }}</label>
         <input
           type="text"
           [(ngModel)]="user.lastname"
@@ -32,11 +32,11 @@
           #lastname="ngModel"
         />
         <div [hidden]="!lastname.pristine" class="alert alert-danger">
-          lastname is required
+          {{ ERRORS.lastnameRequired }}
         </div>
 
         <div class="form-group">
-          <label for="city">city</label>
+          <label for="city">{{ REGISTER.city }}</label>
           <input
             type="text"
             [(ngModel)]="user.city"
@@ -48,10 +48,10 @@
             #city="ngModel"
           />
           <div [hidden]="!city.pristine" class="alert alert-danger">
-            city is required
+            {{ ERRORS.cityRequired }}
           </div>
           <div class="form-group">
-            <label for="email">email</label>
+            <label for="email"> {{ REGISTER.mail }} </label>
             <input
               type="text"
               [(ngModel)]="user.email"
@@ -63,7 +63,7 @@
               #email="ngModel"
             />
             <div [hidden]="!email.pristine" class="alert alert-danger">
-              email is required
+              {{ ERRORS.mailRequired }}
             </div>
 
             <div class="form-group">
@@ -79,14 +79,14 @@
                 #password="ngModel"
               />
               <div [hidden]="!password.pristine" class="alert alert-danger">
-                password is required
+                {{ ERRORS.passwordRequired }}
               </div>
               <button
                 type="submit"
                 [disabled]="!userForm.form.valid"
                 class="btn btn-info"
               >
-                Submit
+                {{ REGISTER.submit }}
               </button>
             </div>
           </div>
