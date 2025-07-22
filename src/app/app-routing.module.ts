@@ -5,7 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { ToyDescriptionComponent } from './toy-description/toy-description.component';
 import { ToysComponent } from './toys/toys.component';
-import { UserannouncementComponent } from './user-annoncement/user-announcement.component';
+import { UserAnnouncementComponent } from './user-annoncement/user-annoucement.component';
 import { UserInfosComponent } from './user-infos/user-infos.component';
 import { UserRequestsComponent } from './user-requests/user-requests.component';
 import { UserReservationsComponent } from './user-reservations/user-reservations.component';
@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'useraccount/requests', component: UserRequestsComponent },
   { path: 'useraccount/reservations', component: UserReservationsComponent },
   { path: 'useraccount/toys', component: UserToysComponent },
-  { path: 'useraccount/post-toys', component: UserannouncementComponent },
+  { path: 'useraccount/post-toys', component: UserAnnouncementComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'login', component: LoginComponent },
   { path: 'users', component: UserInfosComponent },
