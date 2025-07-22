@@ -1,23 +1,23 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, inject, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Toy } from '../Interfaces/Toy';
-import { User } from '../Interfaces/User';
 import { LoginService } from '../login.service';
-import { ToysServiceService } from '../Toys-Service/toys-service.service';
-import { UserService } from '../Users-service/user.service';
+import { ToysService } from '../Toys-Service/toys-service.service';
+import { UserService } from '../service/user.service';
 
 @Component({
-    selector: 'app-toy-description',
-    templateUrl: './toy-description.component.html',
-    styleUrls: ['./toy-description.component.css'],
-    standalone: false
+  selector: 'app-toy-description',
+  templateUrl: './toy-description.component.html',
+  styleUrls: ['./toy-description.component.css'],
+  standalone: false,
 })
 export class ToyDescriptionComponent implements OnInit {
-
   @Input() toy?: Toy;
 
-  constructor(private route: ActivatedRoute, private localStorage: LoginService, private toyService: ToysServiceService, private userService: UserService) {}
-  
+  private readonly route: ActivatedRoute = inject(ActivatedRoute);
+  private readonly localStorage: LoginService = inject(LoginService);
+  private readonly toyService: ToysService = inject(ToysService);
+  private readonly userService: UserService = inject(UserService);
 
   ngOnInit(): void {
     this.getToy();
@@ -25,9 +25,8 @@ export class ToyDescriptionComponent implements OnInit {
 
   getToy(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.toyService.getToyDetail(id)
-    .subscribe(toy => {
-      this.localStorage.saveData("ownerId", `${toy.user.id}`)
+    this.toyService.getToyDetail(id).subscribe((toy) => {
+      this.localStorage.saveData('ownerId', `${toy.user.id}`);
       this.toy = toy;
       console.log(toy);
     });
@@ -36,8 +35,7 @@ export class ToyDescriptionComponent implements OnInit {
   updateAvailability(): void {
     //requete put
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.toyService.updateToyAvailability(id)
-    .subscribe(toy => {
+    this.toyService.updateToyAvailability(id).subscribe((toy) => {
       this.toy = toy;
       console.log(toy);
     });
@@ -45,22 +43,21 @@ export class ToyDescriptionComponent implements OnInit {
 
   addTransaction(): void {
     // requete post
-    
-    const ownerId: number = Number(this.localStorage.getData("ownerId"));
-    const takerId = Number(this.localStorage.getData("userId"));
+
+    const ownerId: number = Number(this.localStorage.getData('ownerId'));
+    const takerId = Number(this.localStorage.getData('userId'));
     const toyId = Number(this.route.snapshot.paramMap.get('id'));
-    this.userService.addTransaction(takerId, toyId, ownerId)
-    .subscribe(toy => {
-      console.log(toy);
-    });
+    this.userService
+      .addTransaction(takerId, toyId, ownerId)
+      .subscribe((toy) => {
+        console.log(toy);
+      });
   }
 
-  
   async makeReservation(): Promise<void> {
-    if (this.toy?.available === true){
-      await this.updateAvailability();
-    this.addTransaction();
+    if (this.toy?.available === true) {
+      this.updateAvailability();
+      this.addTransaction();
     }
   }
-
 }
