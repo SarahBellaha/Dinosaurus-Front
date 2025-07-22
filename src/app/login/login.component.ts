@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { User } from '../Interfaces/User';
 import { LoginService } from '../login.service';
 import { firstValueFrom } from 'rxjs';
+import { ERRORS, TEXT } from 'src/shared/constants';
 
 @Component({
   selector: 'app-login',
@@ -17,6 +18,8 @@ export class LoginComponent implements OnInit {
 
   private readonly router: Router = inject(Router);
   private readonly localStorage: LoginService = inject(LoginService);
+  readonly TEXT = TEXT;
+  readonly ERRORS = ERRORS;
 
   gotoHome() {
     this.router.navigateByUrl('/home');

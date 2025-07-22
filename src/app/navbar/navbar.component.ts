@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from '../login.service';
+import { TEXT } from 'src/shared/constants';
 
 @Component({
   selector: 'app-navbar',
@@ -11,7 +12,8 @@ import { LoginService } from '../login.service';
 export class NavbarComponent implements OnInit {
   @Input() isLoggedIn: string =
     this.localStorage.getData('loggedIn') || 'false';
-  constructor(private localStorage: LoginService, private router: Router) {}
+  constructor(private localStorage: LoginService, private router: Router) { }
+  readonly TEXT = TEXT;
 
   ngOnInit(): void {}
 

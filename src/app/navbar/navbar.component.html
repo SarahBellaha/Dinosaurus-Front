@@ -1,25 +1,25 @@
 <ul class="nav">
   <img class="nav-logo" src="" alt="logo" />
   <li>
-    <a [routerLink]="['/home']">Home</a>
+    <a [routerLink]="['/home']">{{TEXT.home}}</a>
   </li>
   <li>
-    <a [routerLink]="['/toys']">Jouets</a>
+    <a [routerLink]="['/toys']">{{TEXT.toys}}</a>
   </li>
   <div *ngIf="isLoggedIn === 'true'" class="links">
     <li>
-      <a [routerLink]="['/useraccount/informations']">Espace Client</a>
+      <a [routerLink]="['/useraccount/informations']">{{TEXT.customerSpace}}</a>
     </li>
     <li>
-      <a [routerLink]="['/home']" (click)="logout()">Déconnexion</a>
+      <a [routerLink]="['/home']" (click)="logout()">{{TEXT.home}}</a>
     </li>
   </div>
   <div *ngIf="isLoggedIn === 'false'" class="links">
     <li>
-      <a [routerLink]="['/signup']">S'inscrire</a>
+      <a [routerLink]="['/signup']">{{TEXT.register}}</a>
     </li>
     <li>
-      <a [routerLink]="['/login']">Se connecter</a>
+      <a [routerLink]="['/login']">{{TEXT.login}}</a>
     </li>
   </div>
 </ul>
