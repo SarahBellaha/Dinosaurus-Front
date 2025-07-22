@@ -1,24 +1,23 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { User } from './Interfaces/User';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class LoginService {
+  private readonly http: HttpClient = inject(HttpClient);
 
-  constructor(private http: HttpClient) { }
-
-  public saveData(key: string, value: string){
+  public saveData(key: string, value: string) {
     localStorage.setItem(key, value);
   }
 
-  public getData(key: string){
+  public getData(key: string) {
     return localStorage.getItem(key);
   }
 
-  public removeData(key: string){
+  public removeData(key: string) {
     localStorage.removeItem(key);
   }
 
@@ -28,13 +27,12 @@ export class LoginService {
 
   url: string = '/api/login';
 
-  public logUser(userEmail: string, userPassword: string): Observable<User>{
+  public logUser(userEmail: string, userPassword: string): Observable<User> {
     const body = {
       email: userEmail,
-      password: userPassword
-    }
+      password: userPassword,
+    };
 
     return this.http.post<User>(this.url, body);
   }
-
 }
