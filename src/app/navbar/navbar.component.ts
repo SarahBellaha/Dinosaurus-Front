@@ -1,4 +1,4 @@
-import { Component, inject, Input, OnInit } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from '../login.service';
 import { TEXT } from 'src/shared/constants';
@@ -9,14 +9,12 @@ import { TEXT } from 'src/shared/constants';
   styleUrls: ['./navbar.component.css'],
   standalone: false,
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent {
   localStorage: LoginService = inject(LoginService);
   router: Router = inject(Router);
   @Input() isLoggedIn: string =
     this.localStorage.getData('loggedIn') || 'false';
   readonly TEXT = TEXT;
-
-  ngOnInit(): void {}
 
   logout() {
     this.localStorage.clear();
