@@ -1,19 +1,19 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { Toy } from '../Interfaces/Toy';
 import { LoginService } from '../login.service';
-import { ToysServiceService } from '../Toys-Service/toys-service.service';
+import { ToysService } from '../service/toys.service';
 
 @Component({
-    selector: 'app-user-annoucement',
-    templateUrl: './user-annoucement.component.html',
-    styleUrls: ['./user-annoucement.component.css'],
-    standalone: false
+  selector: 'app-user-annoucement',
+  templateUrl: './user-annoucement.component.html',
+  styleUrls: ['./user-annoucement.component.css'],
+  standalone: false,
 })
-export class UserAnnoucementComponent implements OnInit {
-  readonly toy!: Toy 
+export class UserAnnoucementComponent {
+  readonly toy!: Toy;
   private readonly router: Router = inject(Router);
-  private readonly toyService: ToysServiceService = inject(ToysServiceService);
+  private readonly toyService: ToysService = inject(ToysService);
   private readonly localStorage: LoginService = inject(LoginService);
   // Add user to DB
   gotoHome() {
@@ -23,8 +23,8 @@ export class UserAnnoucementComponent implements OnInit {
     this.router.navigateByUrl('/useraccount/toys');
   }
   onSubmit() {
-    const id = Number(this.localStorage.getData("userId"));
+    const id = Number(this.localStorage.getData('userId'));
     this.toyService.saveToy(this.toy, id).subscribe(() => this.gotoToyList());
   }
-  ngOnInit(): void {}
+
 }

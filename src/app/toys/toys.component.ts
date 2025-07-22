@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { Toy } from '../Interfaces/Toy';
-import { ToysService } from '../Toys-Service/toys.service';
+import { ToysService } from '../service/toys.service';
 
 @Component({
   selector: 'app-toys',
