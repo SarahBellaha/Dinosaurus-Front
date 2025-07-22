@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserService } from '../Users-service/user.service';
+import { UserService } from '../service/user.service';
 import { User } from '../Interfaces/User';
 
 @Component({
@@ -9,10 +9,11 @@ import { User } from '../Interfaces/User';
   styleUrls: ['./signup.component.css'],
   standalone: false,
 })
-export class SignupComponent implements OnInit {
+export class SignupComponent {
   user: User = {} as User;
 
-  constructor(private router: Router, private userService: UserService) {}
+  private readonly router: Router = inject(Router);
+  private readonly userService: UserService = inject(UserService);
 
   // Add user to DB
   gotoHome() {
@@ -22,6 +23,4 @@ export class SignupComponent implements OnInit {
   onSubmit() {
     this.userService.save(this.user).subscribe(() => this.gotoHome());
   }
-
-  ngOnInit(): void {}
 }
