@@ -6,7 +6,7 @@ import { Toy } from '../Interfaces/Toy';
 @Injectable({
   providedIn: 'root',
 })
-export class ToysServiceService {
+export class ToysService {
   private readonly http: HttpClient = inject(HttpClient);
 
   private readonly toyUrl = '/api/toys';
