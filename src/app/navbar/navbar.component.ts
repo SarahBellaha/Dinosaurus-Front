@@ -1,6 +1,6 @@
 import { Component, inject, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { LoginService } from '../login.service';
+import { LoginService } from '../service/login.service';
 import { TEXT } from 'src/shared/constants';
 
 @Component({

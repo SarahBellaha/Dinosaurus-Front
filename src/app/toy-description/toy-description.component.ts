@@ -1,7 +1,7 @@
 import { Component, inject, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Toy } from '../Interfaces/Toy';
-import { LoginService } from '../login.service';
+import { LoginService } from '../service/login.service';
 import { ToysService } from '../service/toys.service';
 import { UserService } from '../service/user.service';
 import { TEXT } from 'src/shared/constants';

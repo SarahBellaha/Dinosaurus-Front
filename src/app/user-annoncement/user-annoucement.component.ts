@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { Toy } from '../Interfaces/Toy';
-import { LoginService } from '../login.service';
+import { LoginService } from '../service/login.service';
 import { ToysService } from '../service/toys.service';
 import { ANNOUNCEMENT, ERRORS } from 'src/shared/constants';
 

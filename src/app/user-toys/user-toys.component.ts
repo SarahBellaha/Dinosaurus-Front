@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { Toy } from '../Interfaces/Toy';
-import { LoginService } from '../login.service';
+import { LoginService } from '../service/login.service';
 import { ToysService } from '../service/toys.service';
 import { ANNOUNCEMENT } from 'src/shared/constants';
 

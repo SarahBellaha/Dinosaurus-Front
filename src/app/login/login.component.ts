@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from '../Interfaces/User';
-import { LoginService } from '../login.service';
+import { LoginService } from '../service/login.service';
 import { firstValueFrom } from 'rxjs';
 import { ERRORS, REGISTER, TEXT } from 'src/shared/constants';
 

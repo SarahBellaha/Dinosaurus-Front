@@ -1,6 +1,6 @@
 import { Component, inject, Input, OnInit } from '@angular/core';
 import { Transaction } from '../Interfaces/Transaction';
-import { LoginService } from '../login.service';
+import { LoginService } from '../service/login.service';
 import { UserService } from '../service/user.service';
 import { ANNOUNCEMENT } from 'src/shared/constants';
 
