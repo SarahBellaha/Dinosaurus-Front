@@ -13,7 +13,7 @@ import { UserReservationsComponent } from './user-reservations/user-reservations
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { UsernavComponent } from './usernav/usernav.component';
-import { UserService } from './Users-service/user.service';
+import { UserService } from './service/user.service';
 import {
   provideHttpClient,
   withInterceptorsFromDi,

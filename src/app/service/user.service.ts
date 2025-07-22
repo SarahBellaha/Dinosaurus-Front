@@ -10,6 +10,12 @@ import { User } from '../Interfaces/User';
 export class UserService {
   http: HttpClient = inject(HttpClient);
   private readonly usersUrl = '/api/users';
+  public findAll(): Observable<User[]> {
+    return this.http.get<User[]>(this.usersUrl);
+  }
+  public save(user: User) {
+    return this.http.post<User>(this.usersUrl, user);
+  }
 
   getUserDetail(id: number): Observable<User> {
     return this.http.get<User>(`${this.usersUrl}/${id}`);
@@ -42,7 +48,5 @@ export class UserService {
       `http://localhost:8080/transactions/${id}`
     );
   }
-  public save(user: User) {
-    return this.http.post<User>(this.usersUrl, user);
-  }
+  
 }
