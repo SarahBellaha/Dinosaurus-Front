@@ -4,6 +4,7 @@ import { Toy } from '../Interfaces/Toy';
 import { LoginService } from '../login.service';
 import { ToysService } from '../service/toys.service';
 import { UserService } from '../service/user.service';
+import { TEXT } from 'src/shared/constants';
 
 @Component({
   selector: 'app-toy-description',
@@ -18,6 +19,7 @@ export class ToyDescriptionComponent implements OnInit {
   private readonly localStorage: LoginService = inject(LoginService);
   private readonly toyService: ToysService = inject(ToysService);
   private readonly userService: UserService = inject(UserService);
+  readonly TEXT = TEXT;
 
   ngOnInit(): void {
     this.getToy();

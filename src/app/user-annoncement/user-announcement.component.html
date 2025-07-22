@@ -3,7 +3,7 @@
   <div class="card-body">
     <form (ngSubmit)="onSubmit()" #toyForm="ngForm">
       <div class="form-group">
-        <label for="name">Titre</label>
+        <label for="name">{{ ANNOUNCEMENT.title }}</label>
         <input
           type="text"
           [(ngModel)]="toy.name"
@@ -16,10 +16,10 @@
         />
       </div>
       <div [hidden]="!name.pristine" class="alert alert-danger">
-        Name is required
+        {{ ERRORS.lastnameRequired }}
       </div>
       <div class="form-group">
-        <label for="description">Description</label>
+        <label for="description">{{ ANNOUNCEMENT.description }}</label>
         <input
           type="text"
           [(ngModel)]="toy.description"
@@ -31,11 +31,11 @@
           #description="ngModel"
         />
         <div [hidden]="!description.pristine" class="alert alert-danger">
-          description is required
+          {{ ERRORS.descriptionRequired }}
         </div>
       </div>
       <div class="form-group">
-        <label for="picture">Lien vers la photo de l'objet</label>
+        <label for="picture">{{ ANNOUNCEMENT.pictureLink }}</label>
         <input
           type="text"
           [(ngModel)]="toy.picture"
@@ -47,7 +47,7 @@
           #picture="ngModel"
         />
         <div [hidden]="!picture.pristine" class="alert alert-danger">
-          picture is required
+          {{ ERRORS.pictureRequired }}
         </div>
       </div>
       <button
@@ -55,7 +55,7 @@
         [disabled]="!toyForm.form.valid"
         class="btn btn-info"
       >
-        Poster !
+        {{ ANNOUNCEMENT.submit }}
       </button>
     </form>
   </div>

@@ -8,7 +8,7 @@
       [ngClass]="toy.available === true ? 'beige button' : 'green button'"
       (click)="makeReservation()"
     >
-      {{ toy.available === true ? "Réserver ce jouet" : "Jouet réservé" }}
+      {{ toy.available === true ? TEXT.reserveToy : TEXT.reservedToys }}
     </button>
   </div>
 </div>

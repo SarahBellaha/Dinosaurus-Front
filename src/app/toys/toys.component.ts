@@ -1,6 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { Toy } from '../Interfaces/Toy';
 import { ToysService } from '../service/toys.service';
+import { TEXT } from 'src/shared/constants';
 
 @Component({
   selector: 'app-toys',
@@ -14,6 +15,7 @@ export class ToysComponent implements OnInit {
   inputValue: string = '';
 
   private readonly toyService: ToysService = inject(ToysService);
+  readonly TEXT = TEXT;
 
   ngOnInit(): void {
     this.getToys();

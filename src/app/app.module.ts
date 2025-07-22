@@ -18,7 +18,7 @@ import {
   provideHttpClient,
   withInterceptorsFromDi,
 } from '@angular/common/http';
-import { UserAnnoucementComponent } from './user-annoucement/user-annoucement.component';
+import { UserAnnouncementComponent } from './user-annoncement/user-annoucement.component'; 
 import { UserToysComponent } from './user-toys/user-toys.component';
 import { httpInterceptorsProviders } from './interceptor';
 import { FooterComponent } from './footer/footer.component';
@@ -36,7 +36,7 @@ import { FooterComponent } from './footer/footer.component';
     LoginComponent,
     SignupComponent,
     UsernavComponent,
-    UserAnnoucementComponent,
+    UserAnnouncementComponent,
     UserToysComponent,
     FooterComponent,
   ],
