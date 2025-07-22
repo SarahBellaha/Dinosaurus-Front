@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from '../Interfaces/User';
 import { LoginService } from '../login.service';
@@ -11,7 +11,7 @@ import { ERRORS, TEXT } from 'src/shared/constants';
   styleUrls: ['./login.component.css'],
   standalone: false,
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
   readonly user: User = {} as User;
 
   private readonly isLoggedIn: boolean = false;
@@ -38,6 +38,4 @@ export class LoginComponent implements OnInit {
       window.location.replace('/api/useraccount/informations');
     }
   }
-  // Add user to DB
-  ngOnInit(): void {}
 }
