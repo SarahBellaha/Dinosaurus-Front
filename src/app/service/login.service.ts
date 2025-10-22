@@ -32,7 +32,15 @@ export class LoginService {
       email: userEmail,
       password: userPassword,
     };
-
-    return this.http.post<User>(this.url, body);
+    return this.http.post<User>(this.url, body).pipe(
+      (response: Observable<User>) => {
+        console.log('User logged in successfully:', response);
+        return response;
+      },
+      (error: Observable<User>) => {
+        console.error('Error logging in user:', error);
+        throw error;
+      }
+    );
   }
 }

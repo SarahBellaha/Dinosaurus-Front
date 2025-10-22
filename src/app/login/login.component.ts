@@ -9,7 +9,6 @@ import { ERRORS, REGISTER, TEXT } from 'src/shared/constants';
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-  standalone: false,
 })
 export class LoginComponent {
   readonly user: User = {} as User;
@@ -26,8 +25,8 @@ export class LoginComponent {
     this.router.navigateByUrl('/home');
   }
 
-  async onSubmit() {
-    await firstValueFrom(
+   onSubmit() {
+     firstValueFrom(
       this.localStorage.logUser(this.user.email, this.user.password)
     );
     if (this.isLoggedIn === true && this.user) {
@@ -36,7 +35,7 @@ export class LoginComponent {
       this.localStorage.saveData('userEmail', `${this.user.email}`);
       this.localStorage.saveData('userPassword', `${this.user.password}`);
       this.localStorage.saveData('loggedIn', 'true');
-      window.location.replace('/api/useraccount/informations');
+      globalThis.location.replace('/api/useraccount/informations');
     }
   }
 }

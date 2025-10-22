@@ -7,8 +7,7 @@ import { ERRORS, REGISTER } from 'src/shared/constants';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css'],
-  standalone: false,
+  styleUrls: ['./signup.component.css']
 })
 export class SignupComponent {
   user: User = {} as User;
@@ -20,7 +19,7 @@ export class SignupComponent {
 
   // Add user to DB
   gotoHome() {
-    this.router.navigateByUrl('/login');
+    this.router.navigateByUrl('api/login');
   }
 
   onSubmit() {

@@ -13,7 +13,6 @@
   <div class="body-toys">
     <div class="toy-card" *ngFor="let item of toys">
       <img [src]="item.picture" [alt]="item.name" />
-      <p>{{ item.name }}</p>
       <a [routerLink]="['./', item.id]">{{ item.name }}</a>
     </div>
   </div>
